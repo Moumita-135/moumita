@@ -1,0 +1,222 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>{% block title %}{% endblock title %} | Tech Discussion Forum</title>
+</head>
+<style>
+  hr {
+    color: aqua;
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div style="height: 40px">
+      <div class="mh-100" style="width: 40px; height: 40px"><img src="img/logo.png" width="500%" height="160%"></div>
+    </div>
+    <a class="navbar-brand" href="/index"><span class="badge badge-secondary">TECH</span></h1><span
+        class="badge badge-pill badge-success">Discussion</span><span class="badge badge-primary">Forum</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link p-3 mb-2 bg-info  text-white" href="/index1">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link p-3 mb-2 bg-info  text-white" href="/student">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link p-3 mb-2 bg-info  text-white" href="/about">About Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle p-3 mb-2 bg-info  text-white" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Category
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/domain">Domain</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/GATE">GATE Related Questions</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/INTERVIEW">Interview Related Questions</a>
+
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link p-3 mb-2 bg-info  text-white" href="/contact">Contact Us</a>
+        </li>
+      </ul>
+      <div class="mx-4">
+        <button class="btn btn-success" data-toggle="modal" data-target="#questionModal">Ask Question</button>
+      </div>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <div class="mx-2"></div>
+      <button class="btn btn-danger" data-toggle="modal" data-target="#loginModal">Login</button>
+      <button class="btn btn-danger" data-toggle="modal" data-target="#signupModal">Sign Up</button>
+    </div>
+  </nav>
+
+  <!--Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="loginbox">
+          <img src=" " alt="" class="avatar">
+          <h1>Login to Tech Discussion Forum</h1>
+          <form>
+            <p>Email:</p>
+            <input type="email" name="" placeholder="Enter Your Email" required>
+            <p>Password:</p>
+            <input type="password" name="" placeholder="Enter Password" required>
+            <input type="submit" name="" value="Login">
+            <a href="">Lost Your Password?</a>
+            <br>
+            <a href="">Don't have an account?</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Sign Up Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            <div class="mou">
+              <a class="h1"><b style="font: size 19px"><i style="color:#FF0000"><span
+                      style="font-family:Algerian"></span>TECH</i></b> <span
+                  style="font-family:Algerian">Discussion</span><br><span
+                  style="color: magenta; font-family:Algerian; text-align: center">Forum <span
+                    style="width: 40px; height: 40px"><img src="img/logo.png" width="35%" height="35%"></span>
+              </a>
+            </div>
+            Get an Tech Discussion Forum Account
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label>Full Name:</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter your name">
+            </div>
+            <label for="exampleInputEmail1">Email address:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Enter email" required>
+            <label for="exampleInputEmail1">Password:</label>
+            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Enter Password" required>
+
+            <label for="exampleInputEmail1">Confirm Password:</label>
+            <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+            <label for="exampleInputEmail1">University Roll No:</label>
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Enter Roll No.">
+
+            <label>Department:</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>ECE</option>
+              <option>CSE</option>
+              <option>EE</option>
+              <option>ME</option>
+              <option>CE</option>
+              <option>Others</option>
+            </select>
+
+            <label>Admission Year::</label>
+            <select>
+              <option>2000</option>
+              <option>2001</option>
+              <option>2002</option>
+              <option>2003</option>
+              <option>2004</option>
+              <option>2005</option>
+              <option>2006</option>
+              <option>2007</option>
+              <option>2008</option>
+              <option>2009</option>
+              <option>2010</option>
+              <option>2011</option>
+              <option>2012</option>
+              <option>2013</option>
+              <option>2014</option>
+              <option>2015</option>
+              <option>2016</option>
+              <option>2017</option>
+              <option>2018</option>
+              <option selected>2019</option>
+              <option>2020</option>
+              <option>2021</option>
+              <option>Other</option>
+            </select>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+              else.</small>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Get an Account</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+{% block body %}
+
+{% endblock body %}
+
+ <footer class="container">
+      <p class="float-right"><a href="#">Back to top</a></p>
+      <p>© 2020-2021 Tech Discussion Forum, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

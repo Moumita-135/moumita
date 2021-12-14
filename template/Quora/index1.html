@@ -1,0 +1,175 @@
+{% extends 'core/sitebase1.html' %}
+{% load static %}
+{% block body %}
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{%static 'dist/img/8.jpg' %}" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>WELCOME TO TECH DISCUSSION FORUM</h2>
+        <p>Get Answers for All Your Academic Questions</p>
+        <a href="#" <button class="btn btn-danger">ECE</button></a>
+        <a href="#" <button class="btn btn-primary">CSE</button></a>
+        <a href="#" <button class="btn btn-success">EE</button></a>
+        <a href="#" <button class="btn btn-warning">CE</button></a>
+        <a href="#" <button class="btn btn-dark">ME</button></a>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{%static 'dist/img/7.jpg' %}" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>The Best Question Answer Forum</h2>
+        <p>Get Answers for All Your Academic Questions</p>
+        <a href="#" <button class="btn btn-danger">ECE</button></a>
+        <a href="#" <button class="btn btn-primary">CSE</button></a>
+        <a href="#" <button class="btn btn-success">EE</button></a>
+        <a href="#" <button class="btn btn-warning">CE</button></a>
+        <a href="#" <button class="btn btn-dark">ME</button></a>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{%static 'dist/img/education.jpg' %}" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>Award Winning Forum</h2>
+        <p>Get Answers for All Your Academic Questions</p>
+        <a href="#" <button class="btn btn-danger">ECE</button></a>
+        <a href="#" <button class="btn btn-primary">CSE</button></a>
+        <a href="#" <button class="btn btn-success">EE</button></a>
+        <a href="#" <button class="btn btn-warning">CE</button></a>
+        <a href="#" <button class="btn btn-dark">ME</button></a>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  {% comment %} <a href="{% url 'allquestion' %}" class="btn btn-info btn-lg active" role="button"
+    aria-pressed="true">Recent
+    Questions</a>
+  <a href="/most answer" class="btn btn-light btn-lg" role="button" aria-pressed="true">Most Answered</a>
+  <a href="/answers" class="btn btn-light btn-lg" role="button" aria-pressed="true">Answers</a>
+  <a href="/no answer" class="btn btn-light btn-lg" role="button" aria-pressed="true">No Answer</a>
+  <a href="/most visited" class="btn btn-light btn-lg" role="button" aria-pressed="true">Most Visited</a>
+  <hr style="height:2px;border-width:0;margin-top:0;color:aqua;background-color:aqua"> {% endcomment %}
+  <a type="button" class="btn btn-block btn-info btn-flat" href="{% url 'category' %}">Category</a>
+  <a type="button" class="btn btn-block btn-info btn-flat" href="{% url 'addquestion' %}">Add Question</a>
+  <a type="button" class="btn btn-block btn-info btn-flat" href="{% url 'allquestion' %}">All Question</a>
+
+
+  <div class="container my-4">
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading"><b>Why Join</b><h1 class="text-primary">Tech Discussion Forum?</h1>
+        </h2>
+        <p class="lead" style="background-color:powderblue;color:red;font-size:25px;font-family:courier;">Online forums can be used for many purposes, such as helping students to review material
+          prior to an assignment or exam, engaging students in discussion of course material before coming to class,
+          and reflecting on material that they have read or worked with outside of class.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="img-fluid" src="{% static 'dist/img/1.jpg' %}" alt="..." </div>
+      </div>
+
+    </div>
+    <div class="container my-4">
+      <div class="row featurette">
+        <div class="col-md-7 order-md-1">
+          <h2 class="featurette-heading" style="color:aqua;"><span
+            class="text-muted">Meet New People </span><b>all over the World</b>
+          </h2>
+          <p class="lead"  style="background-color:tomato;color:blue;font-size:25px;font-family:courier;">Give students a chance to connect with each other and be heard.Creating a classroom
+            community where meaningful conversations can happen isn't easy -- it's an ongoing process that takes
+            time. But using online discussion tools can be one great way to help your students build these skills.
+            Plus, the ability to engage in online discussions responsibly is a great 21st-century skill in and of
+            itself.</p>
+        </div>
+        <div class="col-md-5 order-md-2">
+          <img class="img-fluid" src="{% static 'dist/img/2.jpg' %}" alt="..." 
+        </div>
+        </div>
+   </div>
+
+   <div class="container my-4">
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading" style="color:blue"><span
+          class="text-muted">The Best UI/UX and</span> <b>Awesome Features</b>
+        </h2>
+        <p class="lead"  style="background-color:powderblue;color:red;font-size:25px;font-family:courier;">Online discussions often lead to better in-class discussions afterward -- you know, 
+          the kind where students raise their hands and speak out loud. With online discussions, students have 
+          a chance to engage with each other virtually, often having their thoughts and opinions validated. 
+          Afterward, they're typically much more willing to share out loud in class and often share in thoughtful 
+          ways.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="img-fluid" src="{% static 'dist/img/3.jpg' %}" alt="..." </div>
+      </div>
+
+    </div>
+    <div class="container my-4">
+      <div class="row featurette">
+        <div class="col-md-7 order-md-1">
+          <h2 class="featurette-heading" style="color:aqua;"><span
+            class="text-muted">Find People with</span> <b>Your Same Interests</b>
+          </h2>
+          <p class="lead" style="background-color:tomato;color:blue;font-size:25px;font-family:courier;">online discussions are intended to engage students and encourage them to share. 
+            Think of it as a teacher-moderated, private version of Twitter, where students can discuss topics 
+            that might just transcend the virtual space. Setup is quick and easy: Teachers sign up, name their 
+            chat, and give students the URL. Students can join with only a name; no other personal information 
+            is required. Teachers can moderate discussions, remove messages, and "lock" the chat at any time.</p>
+        </div>
+        <div class="col-md-5 order-md-2">
+          <img class="img-fluid" src="{% static 'dist/img/find.png' %}" alt="..." 
+        </div>
+        </div>
+   </div>
+
+   <!-- Footer Start -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+    
+<div class="card-deck">
+  <div class="card">
+    <img  src="{% static 'dist/img/address.png' %}" alt="...">
+    <div class="card-body">
+      <h2 class="card-title" style="font-family:verdana;font-size:40px;color:red;text-align:center;"><b>Get in Touch</b></h2>
+  <br>
+  <br>
+  <br>
+      <div class="contact-info">
+          <p style="font-size: 20px;font-family:sans-serif;">GMIT,Balarampur,Baruipur, Kolkata-700144</p>
+          <p style="font-size: 20px;font-family:sans-serif;"><i class="fa fa-envelope"></i>info@example.com</p>
+          <p style="font-size: 20px;font-family:sans-serif;"><i class="fa fa-phone"></i>+123-456-7890</p>
+          <div class="social">
+              <a style="font-size: 50px;font-family:sans-serif;" href="https://www.facebook.com/GMIT.KolkataIN/?ti=as"><i class="fab fa-facebook-f"></i></a>
+              <a style="font-size: 50px;font-family:sans-serif;color:red;" href="https://youtube.com/channel/UCWGr7Dv8wctoJO3DjxffLOg"><i class="fab fa-youtube"></i></a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="col">
+          <div class="container my-4">
+          <div class="card-deck">
+              <div class="card">
+                <div class="card-body">
+                  <h2 class="card-title" style="font-family:verdana;font-size:30px;color:red;"><b>Trace GMIT</b></h2>
+              <br>
+              <br>
+                  <div class="contact-info">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6340.57751736677!2d88.43660085321869!3d22.
+                 378388852402363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a026d0097533aed%3A0xe18407a46f2e97f6!2s
+                 Gargi%20Memorial%20Institute%20of%20Technology!5e0!3m2!1sen!2sus!4v1631727146232!5m2!1sen!2sus"
+                 width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen>
+                  </iframe>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+<!-- Footer End -->
+
+      {% endblock body %}

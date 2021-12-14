@@ -1,0 +1,103 @@
+{% extends 'core\authBase.html' %}
+{% load static %}
+
+{% block title%}
+{{ block.super }}-SignUp
+{% endblock title%}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'dist/css/register.css' %}"> 
+{% endblock head %}
+{% block content%}
+
+<div class="loginbox">
+    <img src="{% static 'dist/img/avatar.png' %}" class="avatar">
+    <h1>Get an Tech Discussion Forum Account</h1>
+    <form action="" method="POST">
+            {% csrf_token %}
+            <div class="input-group mb-2">
+                {{form.first_name}}
+            </div>
+            <div class="input-group mb-2">
+                {{form.last_name}}
+            </div>
+
+           <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group clearfix">
+                        <div class="icheck-success d-inline">
+                            <label for="checkboxSuccess1">Student</label>
+                            <input type="checkbox" id="checkboxSuccess1" class="chk" name="is_student">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group clearfix">
+                        <div class="icheck-success d-inline">
+                            <label for="checkboxSuccess2">Teacher</label>
+                            <input type="checkbox" id="checkboxSuccess2" class="chk" name="is_teacher">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group mb-2">
+                {{form.enrollment}}
+            </div>
+
+      <div class="input-group mb-2">
+                {{form.email}}
+            
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                else.</small>   </div>  
+        <div class="input-group mb-2">
+            {{form.dept}}
+            </div>
+<br>
+        <div class="input-group mb-2">
+                {{form.year}}
+            </div>
+            <br>
+<div class="input-group mb-3">
+                {{form.semester}}
+            </div>
+            <br>
+ <div class="input-group mb-3">
+                {{form.username}}
+            </div>
+            <div class="input-group mb-3">
+                {{form.password1}}
+            </div>
+            <div class="input-group mb-3">
+                {{form.password2}}
+            </div>
+
+      
+      <input type="submit" name="" value="SignUp">
+      Already have an account?
+      <a href="signin/">Login Here</a>
+    </form>
+  </div>
+{% endblock content%}
+{% block script %}
+<script>
+    $(".chk").change(function () {
+        $(".chk").prop('checked', false);
+        $(this).prop('checked', true);
+    });
+
+    var checkbox_required = $('input[type="checkbox"]');
+
+    checkbox_required.prop('required', true);
+
+    checkbox_required.on('click', function () {
+        if (checkbox_required.is(':checked')) {
+            checkbox_required.prop('required', false);
+        } else {
+            checkbox_required.prop('required', true);
+        }
+    });
+</script>
+
+
+
+{% endblock script%}
