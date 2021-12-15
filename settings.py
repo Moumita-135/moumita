@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-5g&%hc@-j9wd)4rr8$zy_vgpwgpc$chb)159@-ztc9tn5=xei(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,13 +76,23 @@ WSGI_APPLICATION = 'rolebase.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'TDF',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'TDF',
+        'CLIENT': {
+            'host': 'mongodb+srv://moumita:FcDnEXYlIm7TYWv1@cluster0.kvwva.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+        },
+        'ENFORCE_SCHEMA': False,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -124,6 +134,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR]
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media/"
+STATIC_ROOT = BASE_DIR/'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
