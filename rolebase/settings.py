@@ -84,24 +84,22 @@ WSGI_APPLICATION = 'rolebase.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'TDF',
-        'CLIENT': {
-            'host': 'mongodb+srv://moumita:FcDnEXYlIm7TYWv1@cluster0.kvwva.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-        },
-        'ENFORCE_SCHEMA': False,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'TDF',
+#         'CLIENT': {
+#             'host': 'mongodb+srv://moumita:FcDnEXYlIm7TYWv1@cluster0.kvwva.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+#         },
+#         'ENFORCE_SCHEMA': False,
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
