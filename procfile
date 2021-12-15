@@ -1,1 +1,0 @@
-  web: gunicorn CCMS.wgsi --log-file -
