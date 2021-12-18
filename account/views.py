@@ -114,7 +114,7 @@ def cdc(request):
 
 
 @login_required(login_url='signin')
-def category(request):
+def category1(request):
     if not request.user.status:
         return render(request, 'common/notActive.html')
     userdata = User.objects.get(pk=request.user.id)
@@ -135,11 +135,34 @@ def category(request):
 
     context = {'StudentData': userdata, 'categorydata': categorydata,
                'CategoryForm': CategoryForm}
-    return render(request, 'Quora/Category.html', context)
-
+    return render(request, 'Quora/Category1.html', context)
 
 @login_required(login_url='signin')
-def addquestion(request):
+def category2(request):
+    if not request.user.status:
+        return render(request, 'common/notActive.html')
+    userdata = User.objects.get(pk=request.user.id)
+    categorydata = QuestionCategory.objects.filter(owner=request.user.id)
+    if request.method == 'POST':
+        CategoryForm = CategoryManagement(request.POST)
+        if CategoryForm.is_valid():
+            CF = CategoryForm.save(commit=False)
+            CF.status = True
+            CF.owner = request.user.id
+            CF.save()
+            messages.success(
+                request, 'Your Category Details is submited and wait for CDC process')
+        else:
+            messages.warning(request, CategoryForm.errors)
+    else:
+        CategoryForm = CategoryManagement()
+
+    context = {'StudentData': userdata, 'categorydata': categorydata,
+               'CategoryForm': CategoryForm}
+    return render(request, 'Quora/Category2.html', context)
+
+@login_required(login_url='signin')
+def addquestion1(request):
     if not request.user.status:
         return render(request, 'common/notActive.html')
 
@@ -165,11 +188,39 @@ def addquestion(request):
 
     context = {'StudentData': userdata, 'categorydata': categorydata,
                'QuestionForm': QuestionForm, 'questiondata': questiondata}
-    return render(request, 'Quora/AddQuestion.html', context)
-
+    return render(request, 'Quora/AddQuestion1.html', context)
 
 @login_required(login_url='signin')
-def allquestion(request):
+def addquestion2(request):
+    if not request.user.status:
+        return render(request, 'common/notActive.html')
+
+    categorydata = QuestionCategory.objects.all()
+    userdata = User.objects.get(pk=request.user.id)
+    questiondata = Question.objects.filter(owner=request.user.id)
+
+    if request.method == 'POST':
+        QuestionForm = QuestionManagement(request.POST, request.FILES)
+        print(QuestionForm)
+        if QuestionForm.is_valid():
+            QF = QuestionForm.save(commit=False)
+            QF.status = False
+            QF.owner = request.user.id
+            QF.postedtime = date.today()
+            QF.save()
+            messages.success(
+                request, 'Your Question  is submited and wait for CDC Approvel')
+        else:
+            messages.warning(request, QuestionForm.errors)
+    else:
+        QuestionForm = QuestionManagement()
+
+    context = {'StudentData': userdata, 'categorydata': categorydata,
+               'QuestionForm': QuestionForm, 'questiondata': questiondata}
+    return render(request, 'Quora/AddQuestion2.html', context)
+
+@login_required(login_url='signin')
+def allquestion1(request):
     if not request.user.status:
         return render(request, 'common/notActive.html')
 
@@ -207,7 +258,49 @@ def allquestion(request):
             })
 
     context = {'StudentData': userdata, 'questiondata': AllQuestion}
-    return render(request, 'Quora/AllQuestions.html', context)
+    return render(request, 'Quora/AllQuestions1.html', context)
+
+@login_required(login_url='signin')
+def allquestion2(request):
+    if not request.user.status:
+        return render(request, 'common/notActive.html')
+
+    userdata = User.objects.get(pk=request.user.id)
+    try:
+        questiondata = Question.objects.all()
+    except Question.DoesNotExist:
+        questiondata = None
+
+    AllQuestion = []
+    if questiondata is not None:
+        for QD in questiondata:
+            user = User.objects.get(pk=QD.owner)
+            category = QuestionCategory.objects.get(pk=QD.questioncategory)
+            if user is not None:
+                author = user.first_name + ' ' + user.last_name
+                img = user.profilepic.url
+            else:
+                author = ""
+
+            if category is not None:
+                catname = category.name
+            else:
+                catname = ""
+
+            AllQuestion.append({
+                "id": QD.id,
+                "question": QD.question,
+                "questioncategory": QD.questioncategory,
+                'categoryname': catname,
+                'owner': QD.owner,
+                'ownername': author,
+                'ownerimg': img,
+                "postedtime": QD.postedtime,
+            })
+
+    context = {'StudentData': userdata, 'questiondata': AllQuestion}
+    return render(request, 'Quora/AllQuestions2.html', context)
+
 
 
 @login_required(login_url='signin')
@@ -345,20 +438,3 @@ def CE(request):
 
 def ME(request):
         return render(request, 'Quora/ME.html')
-
-def contact(request):
-    if request.method=='POST':
-        print(request)
-        # contact=Contact()
-        # name=request.POST.get('name')
-        # print(name)
-        ''' email=request.POST.get('email')
-        exampleFormControlTextarea1=request.POST.get('exampleFormControlTextarea1')
-        exampleFormControlTextarea2=request.POST.get('exampleFormControlTextarea2')
-        contact.name=name
-        contact.email=email
-        contact.exampleFormControlTextarea1=exampleFormControlTextarea1
-        contact.exampleFormControlTextarea2=exampleFormControlTextarea2
-        contact.save()
-        return HttpResponse('<h1>THANKS FOR CONTACT US</h1>') '''
-    return render(request, 'Quora/contact.html')

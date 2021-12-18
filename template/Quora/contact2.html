@@ -1,107 +1,83 @@
 {% extends 'core/sitebase2.html' %}
 {% load static %}
-{% block title %}
-Contact
-{% endblock title %}
 
 {% block body %}
- <div class="container my-4">
-    <div class="card border-primary md-8" style="max-width:110rem;color:seagreen;">
-
-      <h1 style="text-align: center;">Contact Us</h1>
-
-      <form method="POST" action="/contact" style="margin-left: 15px; margin-right:15px; margin-top: 20px; margin-bottom:15px; border-color:aqua;">
-      {% csrf_token %}
-      <div class="form-group">
-        <label for="name">Your Name:</label>
-        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name..........">
-        {{ContactForm.name}}
-      </div>
-        <div class="form-group">
-          <label for="name">Your Email</label>
-          <input type="email" class="form-control" name="email" id="email" placeholder="Enter Your Email..........">
-          {{ContactForm.email}}
-        </div>
-        <div class="form-group">
-          <label for="name">Phone No:</label>
-          <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Your Phone Number">
-          {{ContactForm.email}}
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Select Your Query</label>
-            {{CategoryForm.name}}
-        </div>
-
-       <!-- div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-  <label class="form-check-label" for="exampleRadios1">
-    Are You a Student?
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    Are You a Teacher?
-  </label>
-</div> -->
-        <br>
-
-        <div class="form-group">
-          <label for="desc">Tell us about yourself</label>
-          <textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
-        </div>
-        <div class="input-group input-group-sm mb-0">
-          <button type="submit" class="btn btn-danger">Submit</button>
-      </div>
-      </form>
-    </div>
+<br>
+<h1 style="text-align: center;color:aqua"><b>CONTACT WITH US</b></h1>
+<h2 style="font-size: 25px;text-align: center;color:white">We would love to respond to your queries and help your succeed.
+    Feel free to get in touch with us.</h2>
+    <br>
+    <div class="container">
+<div class="row">
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="{% static 'dist/img/thank.jpg' %}" alt="Generic placeholder image" width="150" height="150">
+      <h2 style="color: red;">Thank You for your enquiry</h2>
+      <p style="color:purple;font-size:25px;font-family:courier;"><b>We will be in touch shortly. Really doesn't cut it for me. And yet, that's the 
+          best that the majority of websites I spend my valuable time visiting come up with.</b></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="{% static 'dist/img/dream.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+      <h2 style="color: red;">You're an interesting species</h2>
+      <p style="color:purple;font-size:25px;font-family:courier;"><b>An interesting mix. You're capable of such beautiful dreams, and such 
+        horrible nightmares. You feel so lost, so cut off, so alone, only you're not. 
+        See, in all our searching, the only thing we've found that makes the emptiness 
+        bearable, is each other.</b></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="{% static 'dist/img/question.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+      <h2 style="color: red;">No question</h2>
+      <p style="color:purple;font-size:25px;font-family:courier;"><b>Language can free 
+        us of feeling, or almost. Maybe that's one of its functions - so we can understand the 
+        world without becoming entirely overwhelmed by it.</b></p>
+    </div><!-- /.col-lg-4 -->
   </div>
-
+  </div>
+</div>
   <!-- Footer Start -->
 <div class="container">
-    <div class="row">
-      <div class="col">
-      
-  <div class="card-deck">
-    <div class="card">
-      <img  src="{% static 'dist/img/address.png' %}" alt="...">
-      <div class="card-body">
-        <h2 class="card-title" style="font-family:verdana;font-size:40px;color:red;text-align:center;"><b>Get in Touch</b></h2>
-    <br>
-    <br>
-    <br>
-        <div class="contact-info">
-            <p style="font-size: 20px;font-family:sans-serif;">GMIT,Balarampur,Baruipur, Kolkata-700144</p>
-            <p style="font-size: 20px;font-family:sans-serif;"><i class="fa fa-envelope"></i>info@example.com</p>
-            <p style="font-size: 20px;font-family:sans-serif;"><i class="fa fa-phone"></i>+123-456-7890</p>
-            <div class="social">
-                <a style="font-size: 50px;font-family:sans-serif;" href="https://www.facebook.com/GMIT.KolkataIN/?ti=as"><i class="fab fa-facebook-f"></i></a>
-                <a style="font-size: 50px;font-family:sans-serif;color:red;" href="https://youtube.com/channel/UCWGr7Dv8wctoJO3DjxffLOg"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col">
+    
+<div class="card-deck">
+  <div class="card">
+    <img  src="{% static 'dist/img/address.png' %}" alt="...">
+    <div class="card-body">
+      <h2 class="card-title" style="font-family:verdana;font-size:40px;color:red;text-align:center;"><b>Get in Touch</b></h2>
+  <br>
+  <br>
+  <br>
+      <div class="contact-info">
+          <p style="font-size: 20px;font-family:sans-serif;">GMIT,Balarampur,Baruipur, Kolkata-700144</p>
+          <p style="font-size: 20px;font-family:sans-serif;"><i class="fa fa-envelope"></i>info@example.com</p>
+          <p style="font-size: 20px;font-family:sans-serif;"><i class="fa fa-phone"></i>+123-456-7890</p>
+          <div class="social">
+              <a style="font-size: 50px;font-family:sans-serif;" href="https://www.facebook.com/GMIT.KolkataIN/?ti=as"><i class="fab fa-facebook-f"></i></a>
+              <a style="font-size: 50px;font-family:sans-serif;color:red;" href="https://youtube.com/channel/UCWGr7Dv8wctoJO3DjxffLOg"><i class="fab fa-youtube"></i></a>
+          </div>
       </div>
     </div>
-  
   </div>
-  <div class="col">
-            <div class="container my-4">
-            <div class="card-deck">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="card-title" style="font-family:verdana;font-size:30px;color:red;"><b>Trace GMIT</b></h2>
-                <br>
-                <br>
-                    <div class="contact-info">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6340.57751736677!2d88.43660085321869!3d22.
-                   378388852402363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a026d0097533aed%3A0xe18407a46f2e97f6!2s
-                   Gargi%20Memorial%20Institute%20of%20Technology!5e0!3m2!1sen!2sus!4v1631727146232!5m2!1sen!2sus"
-                   width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen>
-                    </iframe>
-                    </div>
+
+</div>
+<div class="col">
+          <div class="container my-4">
+          <div class="card-deck">
+              <div class="card">
+                <div class="card-body">
+                  <h2 class="card-title" style="font-family:verdana;font-size:30px;color:red;"><b>Trace GMIT</b></h2>
+              <br>
+              <br>
+                  <div class="contact-info">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6340.57751736677!2d88.43660085321869!3d22.
+                 378388852402363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a026d0097533aed%3A0xe18407a46f2e97f6!2s
+                 Gargi%20Memorial%20Institute%20of%20Technology!5e0!3m2!1sen!2sus!4v1631727146232!5m2!1sen!2sus"
+                 width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen>
+                  </iframe>
                   </div>
                 </div>
-            </div>
-        </div>
-    </div>
-  <!-- Footer End -->
+              </div>
+          </div>
+      </div>
+  </div>
+<!-- Footer End -->
 {% endblock body %}

@@ -20,7 +20,8 @@ urlpatterns = [
     path('about2/', views.about2, name='about2'),
     path('contact1/', views.contact1, name='contact1'),
     path('contact2/', views.contact2, name='contact2'),
-    path('category/', views.category, name='category'),
+    path('category1/', views.category1, name='category1'),
+    path('category2/', views.category2, name='category2'),
     path('domain/', views.domain, name='domain'),
     path('recent question/', views.recentquestion, name='recent question'),
     path('GATE/', views.GATE, name='GATE'),
@@ -34,8 +35,10 @@ urlpatterns = [
     path('EE/', views.EE, name='EE'),
     path('CE/', views.CE, name='CE'),
     path('ME/', views.ME, name='ME'),
-    path('addquestion/', views.addquestion, name='addquestion'),
-    path('allquestion/', views.allquestion, name='allquestion'),
+    path('addquestion1/', views.addquestion1, name='addquestion1'),
+    path('addquestion2/', views.addquestion2, name='addquestion2'),
+    path('Allquestion1/', views.allquestion1, name='allquestion1'),
+    path('allquestion2/', views.allquestion2, name='allquestion2'),
     path('answersubmit/<int:pk>/<int:fk>', views.answersubmit, name='answersubmit'),
     
 

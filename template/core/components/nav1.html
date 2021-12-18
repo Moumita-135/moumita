@@ -20,31 +20,21 @@
         <li class="nav-item">
           <a class="nav-link p-3 mb-2 bg-info  text-white" href="/about1">About Us</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle p-3 mb-2 bg-info  text-white" href="{% url 'category' %}" id="navbarDropdown" role="button"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Category
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="{% url 'category' %}">Domain</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'allquestion' %}">GATE Related Questions</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'allquestion' %}">Interview Related Questions</a>
-
-          </div>
+        <li class="nav-item">
+          <a class="nav-link p-3 mb-2 bg-info  text-white" href="/category1">Category</a>
         </li>
         <li class="nav-item">
           <a class="nav-link p-3 mb-2 bg-info  text-white" href="/contact1">Contact Us</a>
         </li>
       </ul>
+      
       <div class="mx-4">
-        <a class="btn btn-success btn-lg active" href="{% url 'addquestion' %}">Add Question</a>
+        <a class="btn btn-warning btn-lg active" href="{% url 'allquestion1' %}">All Question</a>
       </div>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
-      </form>
+
+      <div class="mx-4">
+        <a class="btn btn-success btn-lg active" href="{% url 'addquestion1' %}">Add Question</a>
+      </div>
       <div class="mx-2"></div>
       <!-- Right navbar links -->
     <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
